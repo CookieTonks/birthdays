@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/add/', [App\Http\Controllers\HomeController::class, 'add'])->name('add')->middleware('auth');
+Route::post('/edit/', [App\Http\Controllers\HomeController::class, 'edit'])->name('edit')->middleware('auth');
+Route::post('/delete/', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete')->middleware('auth');
